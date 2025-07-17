@@ -1,7 +1,5 @@
 import time
 from logging import exception
-
-
 class BankAccount:
     def __init__(self, owner, account_number, ifsc_code, balance=0):
         self.owner = owner
@@ -17,11 +15,11 @@ class BankAccount:
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
-            time.sleep(3)
+            time.sleep(4)
             print(f"Deposited: ${amount:.2f}")
             self.log_transaction(f"Deposited ${amount:.2f}. New balance: ${self.balance:.2f}.")
         else:
-            time.sleep(3)
+            time.sleep(4)
             print("Invalid deposit amount.")
             self.log_transaction("Failed deposit attempt: Invalid amount.")
 
@@ -29,22 +27,22 @@ class BankAccount:
         if amount > 0:
             if self.balance >= amount:
                 self.balance -= amount
-                time.sleep(3)
+                time.sleep(4)
                 print(f"Withdrew: ${amount:.2f}")
                 self.log_transaction(f"Withdrew ${amount:.2f}. New balance: ${self.balance:.2f}.")
             else:
-                time.sleep(3)
+                time.sleep(4)
                 print("Insufficient balance.")
                 self.log_transaction("Failed withdrawal attempt: Insufficient balance.")
         else:
-            time.sleep(3)
+            time.sleep(4)
             print("Invalid withdrawal amount.")
             self.log_transaction("Failed withdrawal attempt: Invalid amount.")
 
     def check_balance(self):
-        time.sleep(2)
-        print("...processing")
         time.sleep(3)
+        print("...processing")
+        time.sleep(4)
         print(f"Current Balance: ${self.balance:.2f}")
         self.log_transaction(f"Checked balance: ${self.balance:.2f}.")
 
