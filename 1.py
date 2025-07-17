@@ -11,10 +11,10 @@ class BankAccount:
 
         if amount > 0:
             self.balance += amount
-            time.sleep(3)
+            time.sleep(2)
             print(f"Deposited: ${amount:.2f}")
         else:
-            time.sleep(3)
+            time.sleep(2)
             print("Invalid deposit amount.")
 
     def withdraw(self, amount):
